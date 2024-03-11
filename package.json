@@ -1,0 +1,71 @@
+{
+  "name": "agricultural-planting",
+  "version": "0.0.1",
+  "packageManager": "pnpm@8.13.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "docs"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "dev:admin": "pnpm dev --filter admin",
+    "dev:server": "pnpm dev --filter server",
+    "dev:web": "pnpm dev --filter web",
+    "docs:dev": "rspress dev",
+    "docs:build": "rspress build",
+    "docs:preview": "rspress preview",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo test --no-daemon",
+    "test:cov": "jest run --coverage",
+    "clean": "turbo run clean && -rf node_modules",
+    "typecheck": "tsc --noEmit",
+    "commit": "git add . && git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-emoji"
+    }
+  },
+  "lint-staged": {
+    "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": "eslint --cache --fix",
+    "*.json": "prettier --write"
+  },
+  "devDependencies": {
+    "@repo/config": "workspace:^",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-emoji": "1.3.2-canary.2",
+    "eslint": "^8.56.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "markdownlint": "^0.33.0",
+    "prettier": "^3.2.1",
+    "prisma": "^5.8.0",
+    "rimraf": "^5.0.5",
+    "rspress": "^1.9.3",
+    "tsconfig": "workspace:^",
+    "turbo": "1.10.12"
+  },
+  "engines": {
+    "npm": ">=9.0.0",
+    "node": ">=18"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "rollup",
+        "webpack",
+        "core-js"
+      ]
+    },
+    "allowedDeprecatedVersions": {
+      "sourcemap-codec": "*",
+      "w3c-hr-time": "*",
+      "stable": "*"
+    }
+  }
+}
