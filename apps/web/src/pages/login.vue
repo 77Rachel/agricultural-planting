@@ -42,9 +42,9 @@ const submitForm = function (formEl: FormInstance | undefined) {
 	formEl.validate(async (valid) => {
 		if (valid) {
       // const { data, onSuccess } = useRequest(userApi.login(ruleForm))
-      router.replace('/')
+      router.replace('/');
 		} else {
-			ElMessage.error('请正确填写表单！')
+			ElMessage.error('请正确填写表单！');
 			return false
 		}
 	})
@@ -53,7 +53,7 @@ const submitForm = function (formEl: FormInstance | undefined) {
 // 回车键登录
 const keyDown = (e: { keyCode: number }) => {
 	if (e.keyCode == 13 || e.keyCode == 100) {
-		submitForm(ruleFormRef.value)
+		submitForm(ruleFormRef.value);
 	}
 }
 
