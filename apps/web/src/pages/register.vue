@@ -67,11 +67,11 @@ const submitForm = async function (formEl: FormInstance | undefined) {
 		if (valid) {
       const res = await userApi.register(formRef.nickName,formRef.password);
       if(res.code === Status.OK){
-			  ElMessage.success('登录成功');
-        router.push("/login");
+			  ElMessage.success('登录成功')
+        router.push("/login")
       }
 		} else {
-			ElMessage.error('请正确填写表单！');
+			ElMessage.error('请正确填写表单！')
 			return false
 		}
 	})
