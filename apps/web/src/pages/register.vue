@@ -4,7 +4,8 @@ import { Vue3Lottie } from 'vue3-lottie'
 import RegisterJSON from '../assets/lottie/register.json'
 import type { FormInstance,FormRules } from 'element-plus'
 import { ElMessage } from 'element-plus'
-const router = useRouter()
+
+const router = useRouter();
 
 interface RuleForm {
   nickName: string
@@ -64,13 +65,13 @@ const submitForm = async function (formEl: FormInstance | undefined) {
 	if (!formEl) return
 	formEl.validate(async (valid) => {
 		if (valid) {
-      const res = await userApi.register(formRef.nickName,formRef.password)
+      const res = await userApi.register(formRef.nickName,formRef.password);
       if(res.code === Status.OK){
-			  ElMessage.success('登录成功')
-        router.push("/login")
+			  ElMessage.success('登录成功');
+        router.push("/login");
       }
 		} else {
-			ElMessage.error('请正确填写表单！')
+			ElMessage.error('请正确填写表单！');
 			return false
 		}
 	})
@@ -79,11 +80,11 @@ const submitForm = async function (formEl: FormInstance | undefined) {
 /** 回车键登录 */
 const keyDown = (e: { keyCode: number }) => {
   if (e.keyCode == 13 || e.keyCode == 100) {
-    submitForm(ruleFormRef.value)
+    submitForm(ruleFormRef.value);
   }
 }
 
-eventListener('keydown', keyDown)
+eventListener('keydown', keyDown);
 </script>
 
 <template>
