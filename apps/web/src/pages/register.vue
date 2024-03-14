@@ -2,7 +2,7 @@
 // @ts-ignore
 import { Vue3Lottie } from 'vue3-lottie'
 import RegisterJSON from '../assets/lottie/register.json'
-import type { FormInstance,FormRules } from 'element-plus'
+import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage } from 'element-plus'
 
 const router = useRouter();
@@ -54,7 +54,7 @@ const rules = reactive<FormRules<RuleForm>>({
       trigger: ['blur', 'change'],
     }
   ],
-})
+});
 
 /** 
  * 注册
@@ -62,19 +62,19 @@ const rules = reactive<FormRules<RuleForm>>({
  * @param { FormInstance | undefined } formEl 表单实例
  * */
 const submitForm = async function (formEl: FormInstance | undefined) {
-	if (!formEl) return
-	formEl.validate(async (valid) => {
-		if (valid) {
-      const res = await userApi.register(formRef.nickName,formRef.password);
-      if(res.code === Status.OK){
-			  ElMessage.success('登录成功')
-        router.push("/login")
+  if (!formEl) return
+  formEl.validate(async (valid) => {
+    if (valid) {
+      const res = await userApi.register(formRef.nickName, formRef.password);
+      if (res.code === Status.OK) {
+        ElMessage.success('登录成功');
+        router.push("/login");
       }
-		} else {
-			ElMessage.error('请正确填写表单！')
-			return false
-		}
-	})
+    } else {
+      ElMessage.error('请正确填写表单！');
+      return false
+    }
+  })
 }
 
 /** 回车键登录 */
@@ -99,14 +99,7 @@ eventListener('keydown', keyDown);
       注册
     </template>
     <template v-slot:content>
-      <el-form 
-        ref="ruleFormRef" 
-        :model="formRef"
-        label-position="top" 
-        :rules="rules" 
-        label-width="120px" 
-        mt-2
-        >
+      <el-form ref="ruleFormRef" :model="formRef" label-position="top" :rules="rules" label-width="120px" mt-2>
         <el-form-item prop="nickName" label="用户名">
           <el-input v-model="formRef.nickName" />
         </el-form-item>
@@ -121,8 +114,8 @@ eventListener('keydown', keyDown);
             <router-link to="/login" tag="div" class="goRegister" text-3 color-green-600>
               已有账号，去登陆
             </router-link>
-            <button type="button" bg-green-500 color-white rd="1.5" @click="submitForm(ruleFormRef)" @keydown.enter="keyDown($event)" w-30
-            work-spacing-5>
+            <button type="button" bg-green-500 color-white rd="1.5" @click="submitForm(ruleFormRef)"
+              @keydown.enter="keyDown($event)" w-30 work-spacing-5>
               注&nbsp;&nbsp;&nbsp;册
             </button>
           </div>
