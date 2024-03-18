@@ -5,7 +5,7 @@ definePage({
 
 // 一进来就调用
 onMounted(() => {
-	useCharts(chart,pieChartsData)
+  useCharts(chart, pieChartsData)
 })
 const chart = ref()
 
@@ -59,8 +59,32 @@ const pieChartsData: EChartsOption = {
 
 <template>
   <div h-full flex="~ 1" gap-2>
-    <div ref="chart" flex-1 bg="blue/50" rd-3>可视化图标1</div>
-    <div w-50 h-full flex="~ col" gap-2 rd-3>
+    <span absolute left-8 top-9 class="stat-value color-blue-600">正在为您持续监测植物的生长~</span>
+    <div absolute left-7 top-20 pt-1 mb-3 flex="~ row" gap-5 justify-between>
+      <div class="stats shadow" flex-1 flex w-72>
+        <div class="stat bg-blue-400">
+          <div class="stat-title color-white">叶片状态</div>
+          <div class="stat-value color-white" mt-1>饱满健康</div>
+        </div>
+      </div>
+      <div class="stats shadow" flex-1 flex w-72>
+        <div class="stat bg-purple-500">
+          <div class="stat-title color-white">抗病虫害能力</div>
+          <div class="stat-value color-white" mt-1>较强</div>
+        </div>
+      </div>
+      <div class="stats shadow" flex-1 flex w-72>
+        <div class="stat bg-blue-600">
+          <div class="stat-title color-white">根系健康</div>
+          <div class="stat-value color-white" mt-1>良好</div>
+        </div>
+      </div>
+    </div>
+    <video flex-1 bg="blue/50" loop muted rd-4 pl-2 pr-2 pt-42>
+      <source src="../../assets/videos/test.mp4" type="video/mp4">
+      您的浏览器不支持 video 标签
+    </video>
+    <div w-220 h-full flex="~ col" gap-2 rd-3>
       <div flex-1 bg="green/50" rd-3>
         <div rd-3>可视化图标2</div>
       </div>
@@ -69,12 +93,6 @@ const pieChartsData: EChartsOption = {
       </div>
       <div flex-1 bg="green/50" rd-3>
         <div rd-3>可视化图标4</div>
-      </div>
-      <div flex-1 bg="green/50" rd-3>
-        <div rd-3>可视化图标5</div>
-      </div>
-      <div flex-1 bg="green/50" rd-3>
-        <div rd-3>更多</div>
       </div>
     </div>
   </div>
