@@ -62,7 +62,7 @@ const chartsData1: EChartsOption = {
   },
   series: [
     {
-      data: ['13.8', 15.4, 16.3, 20.0, 15.1, 14.9,12.9],
+      data: ['13.8', 15.4, 16.3, 20.0, 15.1, 14.9, 12.9],
       type: 'line',
       symbol: 'triangle',
       symbolSize: 20,
@@ -140,7 +140,7 @@ const chartsData2: EChartsOption = {
       type: 'line',
       smooth: true,
       // prettier-ignore
-      data: [86, 88, 95, 97, 97, 98, 98, 96, 90,83, 78, 81,86,88,90,95,96,97,98,98,98,98],
+      data: [86, 88, 95, 97, 97, 98, 98, 96, 90, 83, 78, 81, 86, 88, 90, 95, 96, 97, 98, 98, 98, 98],
       markArea: {
         itemStyle: {
           color: 'rgba(255, 173, 177, 0.4)'
@@ -174,6 +174,12 @@ const chartsData3: EChartsOption = {
     text: '风力风速图',
     subtext: '单位:m/s'
   },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross'
+    }
+  },
   xAxis: {
     type: 'category',
     data: ['0时', '4时', '8时', '12时', '16时', '20时', '22时']
@@ -189,6 +195,8 @@ const chartsData3: EChartsOption = {
     }
   ]
 };
+
+
 </script>
 
 <template>
@@ -270,27 +278,33 @@ const chartsData3: EChartsOption = {
       </div>
     </div>
     <!-- 中间内容 -->
-    <div flex="~ 1" w-full gap-3>
+    <div flex="~ 1" w-full gap-3 pb-3>
+      <div absolute left-152 class="stats shadow" flex-1 flex h-62 w-152>
+        <div class="stat bg-purple-800">
+          <div class="stat-title color-white" pl-9 font-size-13 font-bold>今天植物的整体状态</div>
+          <div class="stat-value color-white" pl-56 font-size-12>良好</div>
+        </div>
+      </div>
       <!-- 左侧图表 -->
-      <div flex="~ 1 col" gap-2>
-        <div ref="chart" id="chart" flex-1 bg="green/50" rd-3 pl-15 pt-4>
+      <div flex="~ 1 col" gap-3>
+        <div ref="chart" class="chart" flex-1 bg="green/50" rd-3>
           可视化图标1
         </div>
-        <div ref="chart1" flex-1 bg="red/70" rd-3 pl-15 pt-4>
+        <div ref="chart1" class="chart" flex-1 bg="red/70" rd-3>
           可视化图标2
         </div>
       </div>
       <!-- 中间视频 -->
-      <video flex-1 h-116.8 rd-5 mt-33 autoplay loop muted border="~ green 2">
+      <video flex-1 h-116.8 rd-5 mt-64 loop muted border="~ green 2">
         <source src="../../assets/videos/test.mp4" type="video/mp4">
         您的浏览器不支持 video 标签。
       </video>
-      <div flex="~ 1 col" gap-2>
+      <div flex="~ 1 col" gap-3 mr-5>
         <!-- 右侧图表 -->
-        <div ref="chart2" flex-1 bg="blue/50" rd-3 pl-18 pt-3>
+        <div ref="chart2" class="chart" flex-1 bg="blue/50" rd-3>
           <!-- <div justify-center mx-auto>可视化图标1</div> -->
         </div>
-        <div ref="chart3" flex-1 bg="yellow/50" rd-3 pl-15 pt-3>
+        <div ref="chart3" class="chart" flex-1 bg="yellow/50" rd-3>
           可视化图标2
           <!-- <div ref="chart3" flex justify-center mx-auto>可视化图标2</div> -->
         </div>
@@ -301,17 +315,12 @@ const chartsData3: EChartsOption = {
 
 <style>
 .chart {
-  transform: scale(1.0);
-
+  padding-left: 110px;
+  padding-top: 25px;
 }
 
 .touched:hover {
   transform: scale(1.2);
-}
-
-canvas {
-  height: 390px !important;
-  width: 460px !important;
 }
 </style>
 

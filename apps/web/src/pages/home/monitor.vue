@@ -36,10 +36,11 @@ const selectDate = (event) => {
   </div> -->
   <div class="container">
      <video ref="video" class="video-area" loop muted controls>
-      <source :src="allMonitor" type="video/mp4">
+      <source src="../../assets/videos/test.mp4" type="video/mp4">
       您的浏览器不支持 video 标签。
     </video>
-    <div class="function-area">
+    <!-- 日历 -->
+    <!-- <div class="function-area">
       <el-calendar>
         <template #date-cell="{ data }">
           <p :class="data.isSelected ? 'is-selected' : ''" @click="selectDate($event)">
@@ -48,7 +49,7 @@ const selectDate = (event) => {
           </p>
         </template>
       </el-calendar>
-    </div>
+    </div> -->
   </div>
 
 </template>

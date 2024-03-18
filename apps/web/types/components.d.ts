@@ -17,6 +17,7 @@ declare module 'vue' {
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
+    ElSwitch: typeof import('element-plus/es')['ElSwitch']
     Loading: typeof import('./../src/components/Loading.vue')['default']
     OButton: typeof import('onu-ui')['OButton']
     RouterLink: typeof import('vue-router')['RouterLink']
@@ -25,6 +26,7 @@ declare module 'vue' {
     Starport: typeof import('vue-starport')['Starport']
     StarportCarrier: typeof import('vue-starport')['StarportCarrier']
     StateCard: typeof import('./../src/components/StateCard.vue')['default']
+    Switch: typeof import('./../src/components/Switch.vue')['default']
     TheHeader: typeof import('./../src/components/TheHeader.vue')['default']
   }
 }
