@@ -5,7 +5,10 @@ definePage({
 import { ref } from 'vue'
 import { Check, Close } from '@element-plus/icons-vue'
 
+const value1 = ref(true)
 const value2 = ref(true)
+const value3 = ref(true)
+const value4 = ref(true)
 
 </script>
 
@@ -16,7 +19,7 @@ const value2 = ref(true)
       <div class="stat bg-purple-500" flex justify-between>
         <div class="stat-value color-white">远程摄影</div>
         <el-switch 
-         v-model="value2" 
+         v-model="value1" 
          class="mt-2 custom-switch" 
          style="margin-left: 24px; --el-switch-off-color: #ff4949;" 
          inline-prompt 
@@ -44,7 +47,7 @@ const value2 = ref(true)
       <div class="stat bg-purple-500" flex justify-between>
         <div class="stat-value color-white">远程识别病虫害</div>
         <el-switch 
-         v-model="value2" 
+         v-model="value3" 
          class="mt-2 custom-switch" 
          style="margin-left: 24px; --el-switch-off-color: #ff4949;" 
          inline-prompt 
@@ -58,7 +61,7 @@ const value2 = ref(true)
       <div class="stat bg-purple-500" flex justify-between>
         <div class="stat-value color-white">远程通知提醒</div>
         <el-switch 
-         v-model="value2" 
+         v-model="value4" 
          class="mt-2 custom-switch" 
          style="margin-left: 24px; --el-switch-off-color: #ff4949;" 
          inline-prompt 
