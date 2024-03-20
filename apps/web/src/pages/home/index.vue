@@ -27,6 +27,12 @@ const chartsData: EChartsOption = {
       type: 'line'
     }
   },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
   xAxis: {
     type: 'category',
     data: ['0时', '4时', '8时', '12时', '16时', '20时', '22时']
@@ -51,6 +57,12 @@ const chartsData1: EChartsOption = {
     axisPointer: {
       type: 'cross'
     }
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
   },
   xAxis: {
     type: 'category',
@@ -89,6 +101,12 @@ const chartsData2: EChartsOption = {
     axisPointer: {
       type: 'cross'
     }
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
   },
   toolbox: {
     show: true,
@@ -179,6 +197,12 @@ const chartsData3: EChartsOption = {
     axisPointer: {
       type: 'cross'
     }
+  },
+  grid: {
+    left: '3%',
+    right: '1%',
+    bottom: '3%',
+    containLabel: true
   },
   xAxis: {
     type: 'category',
